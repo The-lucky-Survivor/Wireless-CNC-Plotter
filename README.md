@@ -51,13 +51,34 @@ Flash the Arduino Uno with the custom GRBL firmware.
 2. **Crucial Step:** Replace the default `config.h` in the downloaded library with the `config.h` found in the `Firmware/` directory of this repo. This enables the CoreXY kinematics. (If you skip this, your robot will draw at a 45-degree angle!).
 3. Upload to your Arduino via the Arduino IDE.
 
-### 4. Software & Control
-You have multiple ways to generate drawings and control the plotter. The provided PPTX (`CNC Master Technical Documentation Overview.pptx`) details the robust app designed to run the plotter. 
+### 4. Software & Control (A-Z Setup Guide)
 
-Alternatively, to build drawings manually:
-1. Install Inkscape v0.92 with Python 3.7.x.
-2. Use the MI GRBL Extension to convert `.svg` to G-Code. (Use the `servo.py` file inside `Firmware/` if you encounter Python errors).
-3. Connect using Universal G-Code Sender (UGS) or the custom app to begin drawing.
+To control this drawing robot from scratch, you need to set up the software environment correctly. **It's highly recommended to use the exact versions listed below** to avoid compatibility errors.
+
+#### Step A: Install Required Software
+1. **Python:** Install **Python 3.7.x or 3.8.x** (Important: Python 3.9+ will NOT work with the extension). Ensure you check the "Add Python to PATH" box during installation.
+2. **Inkscape:** Install **Inkscape v0.92**. (Modern versions like 1.x have a different extension architecture and may fail).
+3. **MI GRBL Extension:** This extension transforms your drawings (.svg) into G-Code. Place its extracted files inside Inkscape's extensions folder (usually `C:\Program Files\Inkscape\share\extensions`).
+   - *Fixing Extension Errors:* Replace the `servo.py` file inside the extensions folder with the custom `servo.py` provided in this repository under `Firmware/`. This resolves standard scaling and Python syntax bugs.
+4. **Universal G-Code Sender (UGS):** Download and install UGS. This program sends the G-Code instructions directly to your Arduino.
+
+#### Step B: Preparing Your Drawing
+1. Open Inkscape and draw or import the image you want to plot.
+2. Convert your image objects to paths (Go to `Path` > `Object to Path`).
+3. If drawings are coming out the wrong size, change the document scaling in Inkscape properties to **3.5433**.
+4. Select `Extensions` > `MI GRBL Extension`.
+5. Enter the correct M-Codes for the servo. Use **M3** to move the pen DOWN, and **M5** to move the pen UP.
+6. Generate the `.gcode` file and save it to your computer.
+
+#### Step C: Operating the Robot
+1. Connect your Arduino Uno to your PC via USB.
+2. Open Universal G-Code Sender (UGS) and connect to the Arduino's COM port (Baud rate is generally 115200).
+3. **Configure GRBL (First time only):** Enter your machine’s steps/mm and acceleration parameters directly into the UGS console (check `Media/Images/GRBL_Parameters.JPG` for the exact parameters).
+4. **Set Home:** Manually position the pen mechanism to the bottom-left corner of your paper. In UGS, click **Reset Zero** for X and Y to tell the robot this is the starting point `(0, 0)`.
+5. Browse for the `.gcode` file you generated.
+6. Hit **Send**! The plotter will lower the pen and begin drawing your design automatically.
+
+> 💡 **Tip for Wireless Control:** Want to skip the cables? You can bypass UGS entirely and run the machine wirelessly via Bluetooth using the custom Android app outlined in `Documentation/CNC Master Technical Documentation Overview.pptx`!
 
 ---
 
