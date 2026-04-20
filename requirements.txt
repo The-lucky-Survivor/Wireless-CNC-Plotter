@@ -1,0 +1,35 @@
+# Wireless CNC Plotter - Project Requirements
+
+## ELECTRONICS & CONTROL
+- 1x Arduino Uno
+- 1x CNC Shield V3 (for Arduino)
+- 2x A4988 Stepper Motor Drivers
+- 6x Jumpers for the CNC Shield (3 for each stepper driver to set microstepping)
+- 1x 12V 2A Power Supply (Wall Transformer)
+- Wiring wires (to extend the servo connection to the CNC shield)
+
+## MOTORS
+- 2x NEMA 17 Stepper Motors
+- 1x SG90 Micro Servo Motor (For Z-Axis pen up/down mechanism)
+
+## HARDWARE & STRUCTURAL PARTS
+- 2x Linear bearing rod M8 x 450mm (X-Axis)
+- 2x Linear bearing rod M8 x 350mm (Y-Axis)
+- 2x Linear rod M3 x 75mm (Z-Axis)
+- 1x M8 x 480mm threaded rod (or 5/16" x 18.75")
+- 8x LM8UU Linear bearings
+- 2x GT2 Pulley 16 teeth
+- 5x Bearing 624zz
+- 1x 2000mm GT2 belt
+- Assorted M3 and M4 screws and nuts
+- Assorted M8 nuts
+
+## 3D PRINTED PARTS
+- All the parts located in the `3D_Printed_Parts` folder in this repository.
+
+## SOFTWARE DEPENDENCIES
+- Python 3.7.x or 3.8.x (Required for the Inkscape Extension)
+- Inkscape v0.92 (Required version for compatibility)
+- MI GRBL Extension (To convert SVG to G-Code)
+- Universal G-Code Sender (UGS)
+- Arduino IDE (To flash the GRBL Firmware to the Arduino)
