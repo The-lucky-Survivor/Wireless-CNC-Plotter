@@ -63,9 +63,19 @@ Alternatively, to build drawings manually:
 
 ## 📸 Media & Results
 
-Check out the `Media/` folder to see the robot in action!
-* **Images:** Resulting drawings, hardware assembly check-points, and the project's website QR code (`QR for the website.jpg`).
-* **Videos:** Watch the plotter executing G-Code seamlessly.
+Check out the robot in action below!
+
+### 🖼️ Gallery
+<p align="center">
+  <img src="Media/Images/WhatsApp%20Image%202026-04-20%20at%2001.48.23.jpeg" width="32%" alt="Robot Photo 1">
+  <img src="Media/Images/WhatsApp%20Image%202026-04-20%20at%2013.48.24.jpeg" width="32%" alt="Robot Photo 2">
+  <img src="Media/Images/WhatsApp%20Image%202026-04-20%20at%2013.48.32.jpeg" width="32%" alt="Robot Photo 3">
+</p>
+
+### 🎥 Video Demonstration
+<video src="Media/Videos/WhatsApp%20Video%202026-04-20%20at%2001.21.01.mp4" controls="controls" width="100%"></video>
+
+* **More Info:** You can find all drawings, components, and clips directly in the `Media/` folder.
 
 ---
 
