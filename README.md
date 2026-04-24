@@ -106,7 +106,7 @@ Scan the QR code below or open `Media/Images/QR for the website.jpg` to visit th
 
 *(Attach QR Image here)*
 ![Website QR Code](Media/Images/QR%20for%20the%20website.jpg)
-
+Link: https://cnc-machine.netlify.app/
 ---
 
 ## 📜 Credits & License
